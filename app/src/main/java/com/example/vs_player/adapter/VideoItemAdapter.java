@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.adapter;
+package com.example.vs_player.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,14 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.conversions;
-import com.example.eaudioplayer.model.videoItem;
-import com.example.eaudioplayer.view.VideoPlayerActivity;
+import com.example.vs_player.conversions;
+import com.example.vs_player.model.videoItem;
+import com.example.vs_player.view.VideoPlayerActivity;
 import com.google.android.exoplayer2.ExoPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.vs_player.R;
 
 public class VideoItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

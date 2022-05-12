@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.model;
+package com.example.vs_player.model;
 
 import android.net.Uri;
 

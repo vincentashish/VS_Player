@@ -1,7 +1,6 @@
-package com.example.eaudioplayer.view.tabs;
+package com.example.vs_player.view.tabs;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,12 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.view.WebPlayerActivity;
-import com.google.android.exoplayer2.C;
+import com.example.vs_player.R;
+import com.example.vs_player.view.WebPlayerActivity;
 import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class WebFragment extends Fragment {

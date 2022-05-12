@@ -1,4 +1,4 @@
-package com.example.eaudioplayer;
+package com.example.vs_player;
 
 import org.junit.Test;
 

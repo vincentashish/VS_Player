@@ -1,27 +1,25 @@
-package com.example.eaudioplayer.adapter;
+package com.example.vs_player.adapter;
 
-import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.conversions;
-import com.example.eaudioplayer.model.audioItem;
+import com.example.vs_player.conversions;
+import com.example.vs_player.model.audioItem;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.MediaMetadata;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.vs_player.R;
 
 public class AudioItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -134,6 +132,7 @@ public class AudioItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             durationHolder = itemView.findViewById(R.id.audio_duration);
             artistHolder = itemView.findViewById(R.id.artist);
             mimeTypeHolder = itemView.findViewById(R.id.audio_mimeType);
+
         }
     }
 

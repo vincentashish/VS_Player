@@ -1,11 +1,10 @@
-package com.example.eaudioplayer.view.tabs;
+package com.example.vs_player.view.tabs;
 
 import android.Manifest;
 import android.content.ContentUris;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.net.rtp.AudioStream;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -21,20 +20,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.adapter.AudioItemAdapter;
-import com.example.eaudioplayer.model.audioItem;
+import com.example.vs_player.R;
+import com.example.vs_player.adapter.AudioItemAdapter;
+import com.example.vs_player.model.audioItem;
 import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class AudioFragment extends Fragment {
 

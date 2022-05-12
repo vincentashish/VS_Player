@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.view;
+package com.example.vs_player.view;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -18,16 +18,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.adapter.ViewPagerAdapter;
-import com.example.eaudioplayer.view.tabs.AudioFragment;
-import com.example.eaudioplayer.view.tabs.VideoFragment;
-import com.example.eaudioplayer.view.tabs.WebFragment;
-import com.google.android.exoplayer2.C;
+import com.example.vs_player.R;
+import com.example.vs_player.adapter.ViewPagerAdapter;
+import com.example.vs_player.view.tabs.AudioFragment;
+import com.example.vs_player.view.tabs.VideoFragment;
+import com.example.vs_player.view.tabs.WebFragment;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

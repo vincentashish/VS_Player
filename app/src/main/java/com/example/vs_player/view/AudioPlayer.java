@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.view;
+package com.example.vs_player.view;
 
 import android.content.Context;
 

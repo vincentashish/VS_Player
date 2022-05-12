@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.view;
+package com.example.vs_player.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.model.videoItem;
+import com.example.vs_player.R;
+import com.example.vs_player.model.videoItem;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;

@@ -1,4 +1,4 @@
-package com.example.eaudioplayer.view.tabs;
+package com.example.vs_player.view.tabs;
 
 import android.Manifest;
 import android.content.ContentUris;
@@ -21,9 +21,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.eaudioplayer.R;
-import com.example.eaudioplayer.adapter.VideoItemAdapter;
-import com.example.eaudioplayer.model.videoItem;
+import com.example.vs_player.R;
+import com.example.vs_player.adapter.VideoItemAdapter;
+import com.example.vs_player.model.videoItem;
 import com.google.android.exoplayer2.ExoPlayer;
 
 import java.util.ArrayList;
