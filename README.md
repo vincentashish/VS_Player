@@ -1,1 +1,1 @@
-# Exo-Media-Player
+# VS_Player
