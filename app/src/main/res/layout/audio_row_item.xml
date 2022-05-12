@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/AudioRowItemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:elevation="20dp">
+
+<!--    <ImageView-->
+<!--        android:background="@color/teal_700"-->
+<!--        android:id="@+id/albumart"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:src="@drawable/d_album_art"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ededed">
+
+            <TextView
+                android:id="@+id/audio_number"
+                android:layout_width="25dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="2dp"
+                android:text="10"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:gravity="center"
+                android:background="@color/black" />
+            <TextView
+                android:id="@+id/audio_title"
+                android:textSize="24dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintStart_toEndOf="@id/audio_number"
+                app:layout_constraintBottom_toTopOf="@id/artist"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/app_name" />
+            <TextView
+                android:id="@+id/artist"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintStart_toStartOf="@id/audio_title"
+                app:layout_constraintTop_toBottomOf="@id/audio_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Artist" />
+            <TextView
+                android:id="@+id/audio_duration"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="@id/audio_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Duration Mins" />
+
+            <TextView
+                android:id="@+id/audio_size"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/audio_mimeType"
+                android:text="Size MB"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/audio_mimeType"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@id/audio_size"
+                app:layout_constraintEnd_toStartOf="@id/audio_duration"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textAllCaps="true"
+                android:text="Type" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
