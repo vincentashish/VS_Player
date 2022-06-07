@@ -57,7 +57,7 @@ public class VideoFragment extends Fragment {
         List<videoItem> videoItemList = new ArrayList<>();
         Uri videoLibrary;
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-            videoLibrary = MediaStore.Video.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+            videoLibrary = MediaStore.Video.Media.getContentUri(MediaStore.VOLUME_EXTERNAL);
         }
         else{
             videoLibrary = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
@@ -73,7 +73,11 @@ public class VideoFragment extends Fragment {
 
         String sortOrder = MediaStore.Video.Media.DATE_ADDED + " DESC";
 
+        Log.d("Checkkk", "Search path: " + String.valueOf(videoLibrary));
+
         try(Cursor cursor = requireContext().getContentResolver().query(videoLibrary,projection,null,null,sortOrder)){
+
+            Log.d("Checkkk", "Getting columns from: " + String.valueOf(videoLibrary));
 
             int idCol = cursor.getColumnIndexOrThrow(MediaStore.Video.Media._ID);
             int nameCol = cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DISPLAY_NAME);

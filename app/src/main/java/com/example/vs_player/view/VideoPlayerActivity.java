@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +32,11 @@ public class VideoPlayerActivity extends AppCompatActivity {
     ArrayList<videoItem> mVideoItem = new ArrayList<>();
     PlayerView playerView;
     ExoPlayer player;
+    ImageView playBtn;
     int position;
     String videoTitle;
     TextView title;
+    ImageView videoBackBtn;
     ConcatenatingMediaSource concatenatingMediaSource;
     AudioAttributes audioAttributesV = new AudioAttributes.Builder()
             .setUsage(C.USAGE_MEDIA)
@@ -44,6 +48,15 @@ public class VideoPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_player);
         playerView = findViewById(R.id.exoplayer_view);
+        playBtn = findViewById(R.id.exo_play);
+        playBtn.setOnClickListener(view -> {
+            player.play();
+            Log.d("Checkkk","Pressed on Play Button");
+        });
+        videoBackBtn = findViewById(R.id.video_back);
+        videoBackBtn.setOnClickListener(view ->{
+            finish();
+        });
         //getSupportActionBar().hide();
         position = getIntent().getIntExtra("position", 1);
         videoTitle = getIntent().getStringExtra("video_title");
@@ -54,6 +67,8 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
         playVideo();
     }
+
+
 
     private void playVideo() {
 
@@ -79,19 +94,42 @@ public class VideoPlayerActivity extends AppCompatActivity {
         }
         playerView.setPlayer(player);
         playerView.setKeepScreenOn(true);
-        player.prepare(concatenatingMediaSource);
+        player.setMediaSource(concatenatingMediaSource);
+        player.prepare();
         player.seekTo(position, C.TIME_UNSET);
         playError();
 
     }
 
     private void playError() {
-        player.addListener(new Player.EventListener() {
+
+        player.addListener(new Player.Listener() {
             @Override
             public void onPlayerError(PlaybackException error) {
-                Toast.makeText(VideoPlayerActivity.this,"Video Playing Error", Toast.LENGTH_SHORT).show();
+                Player.Listener.super.onPlayerError(error);
+                Log.d("Checkkk","Video Player Error: \n"+String.valueOf(error));
+            }
+
+            @Override
+            public void onIsPlayingChanged(boolean isPlaying) {
+                Player.Listener.super.onIsPlayingChanged(isPlaying);
+                if(isPlaying){
+                    Log.d("Checkkk","FrameRateStrategy: "+String.valueOf(player.getVideoChangeFrameRateStrategy())+"\n"
+                            +"VideoFormat: "+String.valueOf(player.getVideoFormat())+"\n"
+                            +"VideoSize: "+String.valueOf(player.getVideoSize())+"\n");
+                }
+                else{
+                    Log.d("Checkkk","VideoPlayerError: "+String.valueOf(player.getPlayerError())+"\n");
+                }
+            }
+
+            @Override
+            public void onPlaybackStateChanged(int playbackState) {
+                Player.Listener.super.onPlaybackStateChanged(playbackState);
+                Log.d("Checkkk","PlaybackState: "+String.valueOf(playbackState));
             }
         });
+
         player.setPlayWhenReady(true);
     }
 

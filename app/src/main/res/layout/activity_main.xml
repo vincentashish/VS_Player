@@ -82,7 +82,9 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@id/RightView"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/LeftView">
+      app:layout_constraintTop_toBottomOf="@id/LeftView"
+      android:padding="5dp"
+      android:layout_margin="5dp">
 
     <TextView
         android:id="@+id/prevBtn"

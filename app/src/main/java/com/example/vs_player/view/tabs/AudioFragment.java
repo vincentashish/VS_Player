@@ -64,7 +64,7 @@ public class AudioFragment extends Fragment {
         List<audioItem> audioItemList = new ArrayList<>();
         Uri audioLibrary;
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-            audioLibrary = MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+            audioLibrary = MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL);
         }
         else{
             audioLibrary = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
@@ -83,10 +83,12 @@ public class AudioFragment extends Fragment {
 
         String sortOrder = MediaStore.Audio.Media.DATE_ADDED + " DESC";
 
-
+        Log.d("Checkkk", "Search Path: " + String.valueOf(audioLibrary));
 
         //Querying
         try(Cursor cursor = requireContext().getContentResolver().query(audioLibrary,projection,null,null,sortOrder)){
+
+            Log.d("Checkkk", "Getting columns from: " + String.valueOf(audioLibrary));
 
             //cache cursor indices
             int idCol = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID);
